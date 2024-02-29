@@ -1,0 +1,12 @@
+{
+  "spacy": {
+    "pipeline": "en_core_web_lg"
+  },
+  "datasets": {
+    "amazon_review": {
+      "train": "data/Amazon-Review/train_sm.csv",
+      "test": "data/Amazon-Review/test_sm.csv"
+    }
+  },
+  "device": "cuda"
+}

@@ -1,6 +1,7 @@
 # Beyond-Words-Simplified
 ## Notes:
  - Please install the packages listed in the requirements.txt file before running the program.
+ - First time you want to run `data_manager = AGGraphDataModule(..` set the argument `load_preprocessed_data` to `False` to create graphs from texts, But if you have the texts' graphs you can set it to `True` to load them from this directory: `data\GraphData\AG\seq_gen`  
 
 ## Related Article
 [Beyond Words: A Heterogeneous Graph Representation of Text via Graph Neural Networks For Classification](https://ieeexplore.ieee.org/document/10475238)

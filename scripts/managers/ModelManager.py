@@ -30,7 +30,7 @@ class ModelManager(ABC):
         self.log_name = log_name
         self.model_save_dir = model_save_dir
         self.device = device
-        self.accelerator = 'cpu' if self.device=='cpu' else 'gpu'
+        self.accelerator = 'cpu' if (self.device=='cpu' or self.device==torch.device('cpu')) else 'gpu'
         self.max_epochs = max_epochs
         self.ckpt_path = ckpt_path
 

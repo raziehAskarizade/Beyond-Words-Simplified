@@ -3,6 +3,7 @@
 from copy import copy
 import numpy as np
 from os import path
+from pathlib import Path
 from typing import Dict
 
 import pandas as pd
@@ -171,9 +172,11 @@ class AGGraphDataModule(GraphDataModule):
         return graph_constructors
 
     def __get_co_occurrence_graph(self):
+        Path(path.join(self.graphs_path, 'co_occ')).mkdir(parents=True, exist_ok=True)
         return CoOccurrenceGraphConstructor(self.df['Description'][:self.end_data_load], path.join(self.graphs_path, 'co_occ'), self.config, load_preprocessed_data=True, naming_prepend='graph', start_data_load=self.start_data_load, end_data_load=self.end_data_load)
     
     def __get_sequential_graph(self):
+        Path(path.join(self.graphs_path, 'seq_gen')).mkdir(parents=True, exist_ok=True)
         return SequentialGraphConstructor(self.df['Description'][:self.end_data_load], path.join(self.graphs_path, 'seq_gen'), self.config, load_preprocessed_data=True, naming_prepend='graph', start_data_load=self.start_data_load, end_data_load=self.end_data_load , use_general_node=True)
        
     def zero_rule_baseline(self):

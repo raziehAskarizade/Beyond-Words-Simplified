@@ -1,6 +1,6 @@
 {
   "spacy": {
-    "pipeline": "en_core_web_lg"
+    "pipeline": "en_core_web_md"
   },
   "datasets": {
     "amazon_review": {

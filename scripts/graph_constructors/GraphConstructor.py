@@ -93,7 +93,7 @@ class GraphConstructor(ABC):
     def to_graph(self, raw_data):
         pass
 
-    # below method returns torch geometric Data model with indexed nodes from spacy vocab
+    # below method returns torch geometric Data model with indexed nodes from farsi vocab
     @abstractmethod
     def to_graph_indexed(self, raw_data):
         pass

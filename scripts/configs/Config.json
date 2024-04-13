@@ -1,6 +1,6 @@
 {
-  "spacy": {
-    "pipeline": "en_core_web_md"
+  "fa": {
+    "pipeline": "C:/Users/razieh/Downloads/cc.fa.300.bin"
   },
   "datasets": {
     "amazon_review": {

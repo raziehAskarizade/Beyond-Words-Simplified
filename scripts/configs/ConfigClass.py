@@ -10,7 +10,7 @@ class Config:
         self.root = project_root_path
 
         if config_local_path == '':
-            config_local_path = 'Scripts/Configs/Config.json'
+            config_local_path = 'scripts/configs/Config.json'
         config_path = path.join(self.root, config_local_path)
 
         with open(config_path, 'rt') as cf:
@@ -18,14 +18,15 @@ class Config:
 
         self.device = config_data['device'] if 'device' in config_data else 'cpu'
 
-        if 'spacy' in config_data:
-            self.spacy: SpacyConfig = SpacyConfig(config_data['spacy'])
+        # farsi
+        if 'fa' in config_data:
+            self.fa: FaConfig = FaConfig(config_data['fa'])
 
         if 'datasets' in config_data:
             self.datasets = Datasets(config_data['datasets'])
 
-
-class SpacyConfig:
+# farsi
+class FaConfig:
     def __init__(self, json_data: dict):
         if 'pipeline' in json_data:
             self.pipeline: str = json_data['pipeline']
